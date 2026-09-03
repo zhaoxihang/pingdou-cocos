@@ -40,15 +40,8 @@ window.boot = function () {
             else if (settings.orientation === 'portrait') {
                 cc.view.setOrientation(cc.macro.ORIENTATION_PORTRAIT);
             }
-            cc.view.enableAutoFullScreen([
-                cc.sys.BROWSER_TYPE_BAIDU,
-                cc.sys.BROWSER_TYPE_BAIDU_APP,
-                cc.sys.BROWSER_TYPE_WECHAT,
-                cc.sys.BROWSER_TYPE_MOBILE_QQ,
-                cc.sys.BROWSER_TYPE_MIUI,
-                cc.sys.BROWSER_TYPE_HUAWEI,
-                cc.sys.BROWSER_TYPE_UC,
-            ].indexOf(cc.sys.browserType) < 0);
+            // Keep the game embedded in the page; never consume the first tap to enter fullscreen.
+            cc.view.enableAutoFullScreen(false);
         }
 
         // Limit downloading max concurrent task to 2,
@@ -123,7 +116,7 @@ window.boot = function () {
 if (window.jsb) {
     var isRuntime = (typeof loadRuntime === 'function');
     if (isRuntime) {
-        require('src/settings.9b3a5.js');
+        require('src/settings.b630d.js');
         require('src/cocos2d-runtime.js');
         if (CC_PHYSICS_BUILTIN || CC_PHYSICS_CANNON) {
             require('src/physics.js');
@@ -131,7 +124,7 @@ if (window.jsb) {
         require('jsb-adapter/engine/index.js');
     }
     else {
-        require('src/settings.9b3a5.js');
+        require('src/settings.b630d.js');
         require('src/cocos2d-jsb.js');
         if (CC_PHYSICS_BUILTIN || CC_PHYSICS_CANNON) {
             require('src/physics.js');

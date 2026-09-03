@@ -101,6 +101,7 @@ window.boot = function () {
     
     var bundleRoot = [INTERNAL];
     settings.hasResourcesBundle && bundleRoot.push(RESOURCES);
+    bundleRoot.push('script');
 
     var count = 0;
     function cb (err) {

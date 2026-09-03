@@ -101,7 +101,6 @@ window.boot = function () {
     
     var bundleRoot = [INTERNAL];
     settings.hasResourcesBundle && bundleRoot.push(RESOURCES);
-    bundleRoot.push('script');
 
     var count = 0;
     function cb (err) {
@@ -124,7 +123,7 @@ window.boot = function () {
 if (window.jsb) {
     var isRuntime = (typeof loadRuntime === 'function');
     if (isRuntime) {
-        require('src/settings.46ef5.js');
+        require('src/settings.7c0fc.js');
         require('src/cocos2d-runtime.js');
         if (CC_PHYSICS_BUILTIN || CC_PHYSICS_CANNON) {
             require('src/physics.js');
@@ -132,7 +131,7 @@ if (window.jsb) {
         require('jsb-adapter/engine/index.js');
     }
     else {
-        require('src/settings.46ef5.js');
+        require('src/settings.7c0fc.js');
         require('src/cocos2d-jsb.js');
         if (CC_PHYSICS_BUILTIN || CC_PHYSICS_CANNON) {
             require('src/physics.js');
